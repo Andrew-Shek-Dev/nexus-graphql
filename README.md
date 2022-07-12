@@ -1,3 +1,4 @@
+# Trial : Nexus, Primas and GraphQL
 ```bash
 yarn init -y
 yarn add typescript ts-node @types/node nodemon @types/nodemon
