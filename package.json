@@ -6,19 +6,23 @@
   "scripts": {
     "generate": "ts-node --transpile-only src/schema.ts",
     "build": "yarn run generate && tsc",
-    "dev":"yarn run build && nodemon --config nodemon.json dist/index.js"
+    "dev": "yarn run build && nodemon --config nodemon.json dist/index.js"
   },
   "dependencies": {
+    "@prisma/client": "^4.0.0",
     "@types/compression": "^1.7.2",
     "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
     "@types/node": "^18.0.3",
     "@types/nodemon": "^1.19.1",
     "apollo-server": "^3.9.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "graphql": "^16.5.0",
     "nexus": "^1.3.0",
     "nodemon": "^2.0.19",
+    "prisma": "^4.0.0",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4"
   }
