@@ -105,5 +105,15 @@ DATABASE_URL="postgresql://<user name>:<password>@localhost:5432/<database name>
 
 Start the database migration
 ```bash
-npx prisma migrate dev --name "init" 
+npx prisma migrate dev --name "init"
+```
+
+Explanation
+```
+npx prisma migrate <development(dev)/production OR testing(deploy)> --name <migration file name>
+```
+
+//Re-migrate database on new machine
+```
+npx prisma migrate dev
 ```

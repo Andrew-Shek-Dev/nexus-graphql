@@ -3,13 +3,15 @@ import express from 'express';
 import compression from 'compression';
 import cors from 'cors';
 import {schema} from './schema';
+import { context } from './context';
 
 const app = express();
 app.use(compression());
 app.use(cors());
 
 const server = new ApolloServer({
-    schema
+    schema,
+    context
 });
 const PORT = 4000;
 
