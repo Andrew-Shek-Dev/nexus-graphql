@@ -8,6 +8,12 @@ export const Link = objectType({
         builder.nonNull.int("id");
         builder.nonNull.string("description");
         builder.nonNull.string("url");
+        builder.field("postedBy",{
+            type:"User",
+            resolve(parent,_,context){
+                return context.prisma.link.findUnique({where:{id:parent.id}}).postedBy()
+            }
+        });
     }
 });
 
