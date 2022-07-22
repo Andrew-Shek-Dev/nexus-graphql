@@ -247,6 +247,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/bcryptjs@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
+  integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
+
 "@types/body-parser@*", "@types/body-parser@1.19.2":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -300,6 +305,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/jwt-simple@^0.5.33":
+  version "0.5.33"
+  resolved "https://registry.yarnpkg.com/@types/jwt-simple/-/jwt-simple-0.5.33.tgz#fb839cabe81437954f7d0cd01760ad8096ec526e"
+  integrity sha512-RcVbKkbUP6u5yFd9HuLhCkAYlT1FQVZylNsxxgaVMZxMajwrVTmQei7C6yMXSoAkXJXpGOUtbsY6Q9kq3+p93g==
+
 "@types/long@^4.0.0":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
@@ -324,6 +334,13 @@
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/@types/nodemon/-/nodemon-1.19.1.tgz#00b2b931e240112dff30fc9cadbe3de02b5f3abc"
   integrity sha512-3teAFqCFba3W9zk4dAGUZ+rW/nrQBrSGXWyK9HfJuWxmITk2z2d3u/5cy7oFqNG2fZxPwSAWkP+a8q/QC6UU5Q==
+  dependencies:
+    "@types/node" "*"
+
+"@types/permit@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@types/permit/-/permit-0.2.2.tgz#5351d1d9b55d2d9eebc15a1f6302d6dfacc469ea"
+  integrity sha512-GXlSlXFN11zyFd708Hy84c96q9l/DxyY9COTzc3VxTaiH5kD0c57ri6jUkqyU7QP/hklbzvcOWtXAeKc8Xg/ww==
   dependencies:
     "@types/node" "*"
 
@@ -496,6 +513,11 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
+bcryptjs@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+  integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
 
 binary-extensions@^2.0.0:
   version "2.2.0"
@@ -881,6 +903,11 @@ iterall@^1.3.0:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
   integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
 
+jwt-simple@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/jwt-simple/-/jwt-simple-0.5.6.tgz#3357adec55b26547114157be66748995b75b333a"
+  integrity sha512-40aUybvhH9t2h71ncA1/1SbtTNCVZHgsTsTgqPUxGWDmUDrXyDf2wMNQKEbdBjbf4AI+fQhbECNTV6lWxQKUzg==
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -1041,6 +1068,11 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==
+
+permit@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/permit/-/permit-0.2.4.tgz#3af2c8f5bd798f771be50eb59cecd1da6459a383"
+  integrity sha512-Mp2XTEMD3mPsZIWq3bp0claE4IxXKa4C6nhSDPZgGri8Q4CLjEjAQrP/xGKq2548a2KFENmA1V7W0Lob8kTuzw==
 
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.3.1"

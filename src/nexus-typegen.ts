@@ -68,7 +68,9 @@ export interface NexusGenFieldTypes {
     url: string; // String!
   }
   Mutation: { // field return type
+    login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
     post: NexusGenRootTypes['Link']; // Link!
+    signup: NexusGenRootTypes['AuthPayload']; // AuthPayload!
   }
   Query: { // field return type
     feed: NexusGenRootTypes['Link'][]; // [Link!]!
@@ -93,7 +95,9 @@ export interface NexusGenFieldTypeNames {
     url: 'String'
   }
   Mutation: { // field return type name
+    login: 'AuthPayload'
     post: 'Link'
+    signup: 'AuthPayload'
   }
   Query: { // field return type name
     feed: 'Link'
@@ -108,9 +112,18 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
+    login: { // args
+      email: string; // String!
+      password: string; // String!
+    }
     post: { // args
       description: string; // String!
       url: string; // String!
+    }
+    signup: { // args
+      email: string; // String!
+      name: string; // String!
+      password: string; // String!
     }
   }
 }

@@ -103,7 +103,7 @@ Update .env for new user and database
 DATABASE_URL="postgresql://<user name>:<password>@localhost:5432/<database name>?schema=public"
 ```
 
-Start the database migration
+Start the database migration (Create New Migration)
 ```bash
 npx prisma migrate dev --name "init"
 ```
@@ -116,4 +116,33 @@ npx prisma migrate <development(dev)/production OR testing(deploy)> --name <migr
 //Re-migrate database on new machine
 ```
 npx prisma migrate dev
+```
+
+//Rollback Migration
+```
+TBC
+```
+
+Setup Hash Function
+```bash
+yarn add bcryptjs @types/bcryptjs
+```
+
+Create hash.ts
+```typescript
+import * as bcryptjs from 'bcryptjs';
+const SLAT_ROUNDS = 10;
+
+export async function hashPassword(plainPassword:string){
+    return await bcryptjs.hash(plainPassword,SLAT_ROUNDS);
+}
+
+export async function checkPassword(plainPassword:string,hashPassword:string){
+    return await bcryptjs.compare(plainPassword,hashPassword);
+}
+```
+
+Setup JWT
+```bash
+yarn add jwt-simple @types/jwt-simple permit @types/permit
 ```
