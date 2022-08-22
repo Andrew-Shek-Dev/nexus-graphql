@@ -1,6 +1,6 @@
 import { Context } from '../context';
 import {extendType, nonNull, objectType, stringArg} from 'nexus';
-import { NexusGenObjects } from '../nexus-typegen';
+//import { NexusGenObjects } from '../nexus-typegen';
 
 export const Link = objectType({
     name:"Link",
@@ -62,8 +62,22 @@ export const LinkMutation = extendType({
             //     url
             // };
             // links.push(link);
+            const {userId} = context;
+            if (!userId)
+            {
+                throw new Error("Cannot post without logging in.");
+            }
+
             const newLink = context.prisma.link.create({
-                data:{description,url}
+                data:{
+                    description,
+                    url,
+                    postedBy:{
+                        connect:{
+                            id:userId
+                        }
+                    }
+                }
             })
             return newLink;
           }

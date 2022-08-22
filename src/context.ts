@@ -11,7 +11,7 @@ export interface Context {
 export const context=({req}:{req:Request}):Context=>{
     const token = req && req.headers.authorization?loginGuard(req):null
     return {
-        prisma
-        userId:token?.userId
+        prisma,
+        userId:token?.id
     }
 };

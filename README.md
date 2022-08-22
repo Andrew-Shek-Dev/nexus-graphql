@@ -146,3 +146,8 @@ Setup JWT
 ```bash
 yarn add jwt-simple @types/jwt-simple permit @types/permit
 ```
+
+Open Prisma Studio
+```bash
+npx prisma studio
+```

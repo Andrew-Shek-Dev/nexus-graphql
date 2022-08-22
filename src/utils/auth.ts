@@ -3,7 +3,8 @@ import {Bearer} from 'permit';
 import jwtSimple from 'jwt-simple';
 
 export interface AuthPayload{
-    userId:number
+    //userId:number
+    id:number
 }
 
 export const permit = new Bearer({
