@@ -14,6 +14,12 @@ export const Link = objectType({
                 return context.prisma.link.findUnique({where:{id:parent.id}}).postedBy()
             }
         });
+        builder.nonNull.list.nonNull.field("voters",{
+            type:"User",
+            resolve(parent,args,context){
+                return context.prisma.link.findUnique({where:{id:parent.id}}).voters();
+            }
+        });
     }
 });
 

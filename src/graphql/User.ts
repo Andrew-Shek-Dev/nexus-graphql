@@ -13,6 +13,12 @@ export const User = objectType({
                 return context.prisma.user.findUnique({where:{id:parent.id}}).links();
             }
         })
+        builder.nonNull.list.nonNull.field("votes",{
+            type:"Link",
+            resolve(parent,args,context){
+                const {userId} = context;
+                return context.prisma.user.findUnique({where:{id:userId}}).votes();
+            }
+        })
     }
 })
-
