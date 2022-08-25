@@ -151,3 +151,11 @@ Open Prisma Studio
 ```bash
 npx prisma studio
 ```
+
+Prisma : Implement Many-to-Many Relationship
+
+Bonus: To use Nexus creating custom scalars
+
+GraphQL: Filtering - Involve Prisma "where","OR" and "contains" and Nexus:StringArg/nonNull(StringArg())
+
+GraphQL: Pagination - Limit-Offset vs **Cursor-Based

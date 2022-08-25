@@ -1,5 +1,6 @@
 import { Context } from '../context';
-import {extendType, nonNull, objectType, stringArg} from 'nexus';
+import {arg, enumType, extendType, inputObjectType, intArg, list, nonNull, objectType, stringArg} from 'nexus';
+import { Prisma } from '@prisma/client';
 //import { NexusGenObjects } from '../nexus-typegen';
 
 export const Link = objectType({
@@ -41,14 +42,60 @@ export const Link = objectType({
 export const LinkQuery = extendType({
     type:"Query",
     definition(builder){
-        builder.nonNull.list.nonNull.field("feed",{
-            type:"Link",
-            resolve(parent,args,context:Context){
-                return context.prisma.link.findMany();
+        builder.nonNull.field("feed",{
+            type:"Feed",
+            args:{
+                filter: stringArg(),
+                skip:intArg(),
+                take:intArg(),
+                orderBy:arg({type:list(nonNull(LinkOrderByInput))})
+            },
+            async resolve(_,args,context:Context){
+                const where = args.filter?{
+                    OR:[
+                        {description:{contains:args.filter}},
+                        {url:{contains:args.filter}}
+                    ]
+                }:{};
+                const links = context.prisma.link.findMany({
+                    where,
+                    skip:args?.skip as number | undefined,
+                    take:args?.take as number | undefined,
+                    orderBy:args?.orderBy as Prisma.Enumerable<Prisma.LinkOrderByWithRelationInput> | undefined
+                });
+                const count = await context.prisma.link.count({where});
+                const id = `main-feed:${JSON.stringify(args)}`;
+                return {
+                    links,
+                    count,
+                    id
+                }
             }
-        })
+        });
     }
 });
+
+export const LinkOrderByInput = inputObjectType({
+    name:"LinkOrderByInput",
+    definition(builder) {
+        builder.field("description",{type:Sort});
+        builder.field("url",{type:Sort});
+    },
+});
+
+export const Sort = enumType({
+    name:"Sort",
+    members:["asc","desc"]
+})
+
+export const Feed = objectType({
+    name:"Feed",
+    definition(builder){
+        builder.nonNull.list.nonNull.field("links",{type:Link});
+        builder.nonNull.int("count");
+        builder.id("id");
+    }
+})
 
 export const LinkMutation = extendType({
     type:"Mutation",
